@@ -53,7 +53,7 @@ npm install
 Run the server:
 
 ```bash
-node index.mjs
+node index.js
 ```
 
 Open in browser:
