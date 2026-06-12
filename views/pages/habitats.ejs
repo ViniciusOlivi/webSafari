@@ -1,0 +1,41 @@
+<%- include('../partials/header') %>
+    <%- include('../partials/nav') %>
+
+        <main class="habitats-main">
+            <section class="page-title-section">
+                <div class="container">
+                    <h1>Our Wildlife Habitats</h1>
+                    <p>Explore the specialized environments engineered to protect our world's most vulnerable species.</p>
+                </div>
+            </section>
+
+            <section class="habitats-display">
+                <div class="container habitat-grid-layout">
+                    <% if (habitats && habitats.length> 0) { %>
+                        <% habitats.forEach(habitat=> { %>
+                            <article class="habitat-card">
+                                <div class="card-image-box">
+                                    <img src="/images/<%= habitat.image %>" alt="The <%= habitat.name %> ecosystem">
+                                </div>
+                                <div class="card-info-box">
+                                    <span class="habitat-tag">
+                                        <%= habitat.theme %>
+                                    </span>
+                                    <h2>
+                                        <%= habitat.name %>
+                                    </h2>
+                                    <p>
+                                        <%= habitat.description %>
+                                    </p>
+                                    <a href="/habitats/<%= habitat.habitat_id %>" class="btn-card">Discover Animals</a>
+                                </div>
+                            </article>
+                            <% }); %>
+                                <% } else { %>
+                                    <p>No habitats found. Please populate your database.</p>
+                                    <% } %>
+                </div>
+            </section>
+        </main>
+
+        <%- include('../partials/footer') %>

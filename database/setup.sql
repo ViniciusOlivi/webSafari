@@ -30,13 +30,13 @@ CREATE TABLE IF NOT EXISTS contact_messages (
 
 -- Insert Test Habitats (In English)
 INSERT INTO habitats (name, description, image, theme) VALUES 
-('Rainforest Canopy', 'Discover an immersive tropical world filled with vibrant exotic wildlife and lush treetops.', 'rainforest.jpg', 'Tropical'),
-('Savannah Plains', 'Journey through wide-open grasslands to observe spectacular African mammals roaming freely.', 'savannah.jpg', 'Safari'),
-('Reptile World', 'Step into a specialized environment dedicated to the conservation of fascinating amphibians and reptiles.', 'reptile.jpg', 'Exotic');
+('Rainforest Canopy', 'Discover an immersive tropical world filled with vibrant exotic wildlife and lush treetops.', 'rainforest.png', 'Tropical'),
+('Savannah Plains', 'Journey through wide-open grasslands to observe spectacular African mammals roaming freely.', 'savannah.png', 'Safari'),
+('Reptile World', 'Step into a specialized environment dedicated to the conservation of fascinating amphibians and reptiles.', 'reptile.png', 'Exotic');
 
 -- Insert Test Experiences (In English)
 INSERT INTO experiences (habitat_id, name, description, age_group, image) VALUES 
-(1, 'Lemur Walkthrough', 'Walk right alongside free-roaming lemurs in a specially designed natural habitat.', 'All Ages', 'lemur.jpg'),
-(1, 'Nocturnal Canopy Tour', 'A guided evening expedition to observe the unique behaviors of our nocturnal rainforest animals.', '12+', 'night.jpg'),
-(2, 'Giraffe Feeding Experience', 'Get up close and feed our gentle giants directly from an elevated viewing platform.', 'All Ages', 'giraffe.jpg'),
-(3, 'Crocodile Conservation Talk', 'Learn critical facts about apex predators from our expert team of wildlife rangers.', '7+', 'croc.jpg');
+(1, 'Lemur Walkthrough', 'Walk right alongside free-roaming lemurs in a specially designed natural habitat.', 'All Ages', 'lemur.png'),
+(1, 'Nocturnal Canopy Tour', 'A guided evening expedition to observe the unique behaviors of our nocturnal rainforest animals.', '12+', 'night.png'),
+(2, 'Giraffe Feeding Experience', 'Get up close and feed our gentle giants directly from an elevated viewing platform.', 'All Ages', 'giraffe.png'),
+(3, 'Crocodile Conservation Talk', 'Learn critical facts about apex predators from our expert team of wildlife rangers.', '7+', 'croc.png');

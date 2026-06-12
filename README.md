@@ -49,11 +49,13 @@ Install dependencies:
 ```bash
 npm install
 ```
+Populate database:
+init-db.js
 
 Run the server:
 
 ```bash
-npm run dev
+node index.js
 ```
 
 Open in browser:

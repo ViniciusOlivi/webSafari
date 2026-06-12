@@ -43,6 +43,7 @@ app.use("/", pageRoutes);
 app.use("/api", apiRoutes);
 
 // starting the server
+
 app.listen(PORT, () => {
   console.log(`Server Verdoliva running on http://localhost:${PORT}`);
 });
