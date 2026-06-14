@@ -1,0 +1,40 @@
+<%- include('../partials/header') %>
+    <%- include('../partials/nav') %>
+
+        <main class="activity-main-page">
+            <section class="page-title-section">
+                <div class="container">
+                    <h1>Wildlife Conservation Quiz</h1>
+                    <p>Test your knowledge about nature and discover how you can help protect our planet!</p>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <div class="container">
+                    <div class="quiz-container" id="quizContainer">
+
+                        <div class="quiz-header">
+                            <span id="questionCount">Question 1 of 3</span>
+                            <span id="scoreDisplay">Score: 0</span>
+                        </div>
+
+                        <h2 id="questionText">Loading question...</h2>
+
+                        <div class="options-grid" id="optionsGrid">
+                        </div>
+
+                    </div>
+
+                    <div class="result-container" id="resultContainer" style="display: none;">
+                        <h2 id="resultTitle">Quiz Completed!</h2>
+                        <p id="resultMessage"></p>
+                        <button id="restartBtn" class="btn-primary">Try Again</button>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <script src="/js/activity.js"></script>
+
+        <%- include('../partials/footer') %>

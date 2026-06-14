@@ -23,4 +23,48 @@ router.get("/habitats", (req, res) => {
   });
 });
 
+// Contact page
+router.get("/contact", (req, res) => {
+  res.render("pages/contact", { title: "Contact Us", success: false });
+});
+
+// Contact form submission route (POST) - Saves to database
+router.post("/contact", (req, res) => {
+  const db = req.app.locals.db;
+
+  const { name, email, subject, message } = req.body;
+
+  // Insert the data into the contact_messages table
+  const sql =
+    "INSERT INTO contact_messages (name, email, subject, message) VALUES (?, ?, ?, ?)";
+
+  db.run(sql, [name, email, subject, message], (err) => {
+    if (err) {
+      console.error("Database insert error:", err.message);
+      return res.status(500).send("Internal Server Error");
+    }
+
+    //how the success message
+    res.render("pages/contact", { title: "Contact Us", success: true });
+  });
+});
+
+router.get("/experiences", (req, res) => {
+  const db = req.app.locals.db;
+  db.all("SELECT * FROM experiences", [], (err, rows) => {
+    if (err) {
+      console.error("Database query error:", err.message);
+      return res.status(500).send("Internal Server Error");
+    }
+    res.render("pages/experiences", {
+      title: "Our Experiences",
+      experiences: rows,
+    });
+  });
+});
+
+router.get("/activity", (req, res) => {
+  res.render("pages/activity", { title: " InteractiveActivity" });
+});
+
 export default router;
