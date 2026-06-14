@@ -67,4 +67,8 @@ router.get("/activity", (req, res) => {
   res.render("pages/activity", { title: " InteractiveActivity" });
 });
 
+router.get("/faq", (req, res) => {
+  res.render("pages/faq", { title: "FAQ" });
+});
+
 export default router;

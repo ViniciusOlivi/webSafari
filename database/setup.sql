@@ -40,3 +40,22 @@ INSERT INTO experiences (habitat_id, name, description, age_group, image) VALUES
 (1, 'Nocturnal Canopy Tour', 'A guided evening expedition to observe the unique behaviors of our nocturnal rainforest animals.', '12+', 'night.png'),
 (2, 'Giraffe Feeding Experience', 'Get up close and feed our gentle giants directly from an elevated viewing platform.', 'All Ages', 'giraffe.png'),
 (3, 'Crocodile Conservation Talk', 'Learn critical facts about apex predators from our expert team of wildlife rangers.', '7+', 'croc.png');
+
+-- Create Events table
+CREATE TABLE IF NOT EXISTS events (
+    event_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    category TEXT NOT NULL,
+    year INTEGER NOT NULL,
+    event_date DATE NOT NULL,
+    description TEXT NOT NULL,
+    image TEXT NOT NULL
+);
+
+-- Insert dummy events
+INSERT INTO events (title, category, year, event_date, description, image) VALUES 
+('Summer Wildlife Festival', 'Seasonal Celebrations', 2026, '2026-07-20', 'Join us for a massive summer celebration featuring local music, food stalls, and special animal encounters.', 'rainforest.png'),
+('Nocturnal Safari', 'Night Experiences', 2026, '2026-08-15', 'Explore the park after dark with thermal cameras and expert guides.', 'night.png'),
+('Spring Conservation Workshop', 'Educational Talks', 2026, '2026-05-10', 'Learn how to protect local habitats and create insect-friendly gardens at home.', 'lemur.png'),
+('Winter Lights Trail', 'Seasonal Celebrations', 2025, '2025-12-15', 'A magical winter experience with eco-friendly light displays across the park.', 'giraffe.png'),
+('Family Reptile Day', 'Family Activities', 2026, '2026-09-05', 'A hands-on educational day perfect for kids to learn about snakes and lizards.', 'croc.png');

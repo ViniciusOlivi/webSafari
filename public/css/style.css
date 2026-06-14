@@ -593,3 +593,64 @@ a {
     background-color: var(--primary-olive);
     color: var(--pure-white);
 }
+
+/* FAQ STYLES */
+.faq-content-section {
+    padding: 4rem 0;
+}
+
+.faq-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: var(--pure-white);
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+
+.faq-item summary {
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--deep-forest);
+    cursor: pointer;
+    list-style: none; /* Remove a setinha padrão do HTML */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    outline: none;
+}
+
+/* remove default marker */
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+/* "+" icon personalized using after */
+.faq-item summary::after {
+    content: '+';
+    font-size: 1.8rem;
+    color: var(--primary-olive);
+    transition: transform 0.3s ease;
+}
+
+/* Change to "−" when opened */
+.faq-item[open] summary::after {
+    content: '−';
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    color: var(--charcoal);
+    line-height: 1.6;
+    border-top: 1px solid #f0f0f0;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+}
