@@ -24,5 +24,31 @@ router.get("/experiences", (req, res) => {
   });
 });
 
+// Filtering events
+router.get("/events", (req, res) => {
+  const db = req.app.locals.db;
+
+  const year = req.query.year || 2026;
+  const category = req.query.category || "All";
+
+  let sql = "SELECT * FROM events WHERE year = ?";
+  let params = [year];
+
+  if (category !== "All") {
+    sql += " AND category = ?";
+    params.push(category);
+  }
+
+  sql += " ORDER BY date ASC";
+
+  db.all(sql, params, (err, rows) => {
+    if (err) {
+      console.error("Database query error:", err.message);
+      return res.status(500).json({ error: "Internal Server Error" });
+    }
+    res.json(rows);
+  });
+});
+
 // Export the router as default
 export default router;

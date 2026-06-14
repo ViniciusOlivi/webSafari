@@ -1,0 +1,44 @@
+<%- include('../partials/header') %>
+    <%- include('../partials/nav') %>
+
+        <main class="events-main-page">
+            <section class="page-title-section">
+                <div class="container">
+                    <h1>Park Events & Schedules</h1>
+                    <p>Join us for special seasonal festivals, educational workshops, and exclusive night experiences.</p>
+                </div>
+            </section>
+
+            <section class="events-filter-section">
+                <div class="container">
+                    <div class="filters-container">
+                        <div class="filter-group">
+                            <label for="yearFilter">Select Year:</label>
+                            <select id="yearFilter">
+                                <option value="2026" selected>2026 (Current)</option>
+                                <option value="2025">2025 (Past)</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="categoryFilter">Category:</label>
+                            <select id="categoryFilter">
+                                <option value="All" selected>All Events</option>
+                                <option value="Seasonal Celebrations">Seasonal Celebrations</option>
+                                <option value="Night Experiences">Night Experiences</option>
+                                <option value="Educational Talks">Educational Talks</option>
+                                <option value="Family Activities">Family Activities</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="events-grid" id="eventsGrid">
+                        <p>Loading events...</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script src="/js/events.js"></script>
+
+        <%- include('../partials/footer') %>

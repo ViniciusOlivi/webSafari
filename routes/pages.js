@@ -71,4 +71,28 @@ router.get("/faq", (req, res) => {
   res.render("pages/faq", { title: "FAQ" });
 });
 
+router.get("/events", (req, res) => {
+  res.render("pages/events", { title: "Park Events" });
+});
+
+// Route to fetch event details by ID
+router.get("/events/:id", (req, res) => {
+  const db = req.app.locals.db;
+  const eventId = req.params.id;
+
+  const sql = "SELECT * FROM events WHERE event_id = ?";
+
+  db.get(sql, [eventId], (err, event) => {
+    if (err || !event) {
+      return res.status(404).send("Event not found");
+    }
+
+    res.render("pages/event-detail", {
+      title: event.title,
+      event: event,
+    });
+  });
+});
+
+// Export the router as default
 export default router;
