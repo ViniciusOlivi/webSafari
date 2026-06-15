@@ -1,10 +1,25 @@
 
 /*RESPONSIVE LAYOUT (MEDIA QUERIES) */
 
+:root {
+    /* Color Palette */
+    --primary-olive: #606C38;
+    --deep-forest: #283618;
+    --sandstone: #DDA15E;
+    --earth-clay: #BC6C25;
+    --soft-cream: #FEFAE9;
+    --pure-white: #FFFFFF;
+    --charcoal: #2B2D2F;
+}
+
 /* Tablets and large smartphones (Screens up to 768px) */
 @media (max-width: 768px) {
     
     /* HEADER & NAVIGATION */
+
+       .hero-content h1 {
+        display: none !important;
+    }
 
   .header-container {
         display: flex !important;

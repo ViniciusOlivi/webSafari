@@ -9,7 +9,7 @@
                 </div>
             </section>
 
-            <section class="habitats-display">
+            <div class="habitats-display">
                 <div class="container habitat-grid-layout">
                     <% if (habitats && habitats.length> 0) { %>
                         <% habitats.forEach(habitat=> { %>
@@ -35,7 +35,7 @@
                                     <p>No habitats found. Please populate your database.</p>
                                     <% } %>
                 </div>
-            </section>
+            </div>
         </main>
 
         <%- include('../partials/footer') %>
