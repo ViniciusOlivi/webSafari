@@ -642,7 +642,7 @@ a {
 
 /* Change to "−" when opened */
 .faq-item[open] summary::after {
-    content: '−';
+    content: '−'; 
     transform: rotate(180deg);
 }
 
@@ -654,3 +654,134 @@ a {
     margin-top: 0.5rem;
     padding-top: 1rem;
 }
+
+/* EVENTS & FILTERS STYLES*/
+.filters-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    background-color: var(--soft-cream);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.filter-group label {
+    margin-right: 0.5rem;
+    font-weight: bold;
+    color: var(--deep-forest);
+}
+
+.filter-group select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid var(--primary-olive);
+    border-radius: 4px;
+}
+
+.events-grid {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.event-card {
+    background-color: var(--pure-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    flex: 1;
+    min-width: 300px;
+    max-width: 350px;
+    border-top: 4px solid var(--primary-olive);
+}
+
+.event-img {
+    position: relative;
+    height: 200px;
+}
+
+.event-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.past-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #d9534f;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+/* Card for past events */
+.past-event {
+    opacity: 0.75;
+}
+
+.event-info {
+    padding: 1.5rem;
+}
+
+.event-date {
+    color: var(--primary-olive);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.event-category {
+    font-style: italic;
+    color: var(--charcoal);
+    margin-bottom: 1.5rem;
+}
+
+/* Event Detail Page */
+.detail-container {
+    display: flex;
+    gap: 3rem;
+    padding: 3rem 0;
+    flex-wrap: wrap;
+}
+
+.detail-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.detail-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.detail-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    color: var(--primary-olive);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.alert-past {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #f5c6cb;
+}
+
+/*responsive hamb menu button*/
+
+.mobile-menu-btn { display: none; }

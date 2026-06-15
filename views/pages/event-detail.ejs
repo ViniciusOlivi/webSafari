@@ -1,0 +1,43 @@
+<%- include('../partials/header') %>
+    <%- include('../partials/nav') %>
+
+
+        <main class="event-detail-page">
+            <div class="container">
+                <a href="/events" class="back-link">&larr; Back to Events</a>
+
+                <div class="detail-container">
+                    <div class="detail-image">
+                        <img src="/images/<%= event.image %>" alt="<%= event.title %>">
+                    </div>
+
+                    <div class="detail-content">
+                        <% const today=new Date().toISOString().split('T')[0]; const isPast=event.event_date < today; %>
+
+                            <% if (isPast) { %>
+                                <div class="alert-past">
+                                    <strong>Please note:</strong> This event has already occurred.
+                                </div>
+                                <% } %>
+
+                                    <span class="event-date-large">
+                                        <%= event.event_date %>
+                                    </span>
+                                    <h1>
+                                        <%= event.title %>
+                                    </h1>
+                                    <span class="category-tag">
+                                        <%= event.category %>
+                                    </span>
+
+                                    <div class="description-box">
+                                        <p>
+                                            <%= event.description %>
+                                        </p>
+                                    </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <%- include('../partials/footer') %>

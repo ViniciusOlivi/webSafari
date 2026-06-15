@@ -3,13 +3,26 @@
         <div class="logo">
             <a href="/">Verdoliva <span>Eco Park</span></a>
         </div>
-        <nav class="navbar">
+
+        <button id="mobileMenuBtn" class="mobile-menu-btn">☰ Menu</button>
+        <nav class="navbar" id="navbar">
             <a href="/">Home</a>
             <a href="/habitats">Habitats</a>
             <a href="/experiences">Experiences</a>
             <a href="/faq">FAQ</a>
+            <a href="/events">Events</a>
             <a href="/activity">Interactive Activity</a>
             <a href="/contact" class="btn-nav">Contact Us</a>
         </nav>
     </div>
+
+    <script>
+        const btn = document.getElementById('mobileMenuBtn');
+        const nav = document.getElementById('navbar');
+        if (btn && nav) {
+            btn.addEventListener('click', () => {
+                nav.classList.toggle('show-menu');
+            });
+        }
+    </script>
 </header>

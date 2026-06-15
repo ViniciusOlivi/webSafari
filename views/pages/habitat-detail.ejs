@@ -1,0 +1,54 @@
+<%- include('../partials/header') %>
+    <%- include('../partials/nav') %>
+
+        <main class="habitat-detail-page">
+            <section class="page-title-section">
+                <div class="container">
+                    <h1>
+                        <%= habitat.name %>
+                    </h1>
+                    <p>
+                        <%= habitat.description %>
+                    </p>
+                </div>
+            </section>
+
+            <section class="experiences-section" style="padding-bottom: 4rem;">
+                <div class="container">
+                    <a href="/habitats" class="back-link">&larr; Back to Habitats</a>
+
+                    <h2 style="margin-top: 2rem; color: var(--deep-forest);">Animals & Experiences in this Habitat:</h2>
+
+                    <div class="experiences-grid" style="margin-top: 2rem;">
+
+                        <% if (experiences && experiences.length> 0) { %>
+                            <% experiences.forEach(function(exp) { %>
+                                <div class="experience-card">
+                                    <div class="exp-image-wrapper">
+                                        <img src="/images/<%= exp.image %>" alt="<%= exp.name %>">
+                                    </div>
+                                    <div class="exp-content-wrapper">
+                                        <h3>
+                                            <%= exp.name %>
+                                        </h3>
+                                        <p>
+                                            <%= exp.description %>
+                                        </p>
+                                        <% if(exp.age_group) { %>
+                                            <p style="margin-top: 1rem; font-size: 0.9rem;"><strong>Age Group:</strong>
+                                                <%= exp.age_group %>
+                                            </p>
+                                            <% } %>
+                                    </div>
+                                </div>
+                                <% }); %>
+                                    <% } else { %>
+                                        <p>More information about the animals in this habitat is coming soon!</p>
+                                        <% } %>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <%- include('../partials/footer') %>

@@ -1,0 +1,157 @@
+
+/*RESPONSIVE LAYOUT (MEDIA QUERIES) */
+
+/* Tablets and large smartphones (Screens up to 768px) */
+@media (max-width: 768px) {
+    
+    /* HEADER & NAVIGATION */
+
+  .header-container {
+        display: flex !important;
+        flex-direction: column !important; 
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+
+    /* hamburger menu button */
+    .mobile-menu-btn {
+        display: block !important;
+        background: transparent;
+        color: var(--pure-white, #fff);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        padding: 8px 12px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        border-radius: 4px;
+        font-family: inherit;
+    }
+
+    header h1, header h2, .logo {
+        margin-bottom: 0.5rem !important;
+    }
+
+    .navbar {
+        display: none !important; 
+        width: 100% !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        margin-top: 1.5rem !important;
+        gap: 15px !important;
+    }
+
+
+    .navbar.show-menu {
+        display: flex !important;
+    }
+
+  
+    .navbar a {
+        padding: 0.5rem 0 !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    /* 2. HOME SCREEN */
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .hero-section {
+        padding: 4rem 1rem;
+    }
+    
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+   
+    .highlights-grid,
+    .experiences-grid,
+    .events-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .highlight-card,
+    .experience-card,
+    .event-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .habitat-card {
+        flex-direction: column;
+    }
+
+    /* EVENT DETAILS */
+    .detail-container {
+        flex-direction: column;
+    }
+
+    /* EVENT FILTERS */
+    .filters-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    /* FORMS & QUIZ */
+    .form-container,
+    .quiz-container {
+        padding: 1.5rem;
+    }
+    
+    /* FOOTER */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+}
+
+/* Small smartphones (480px) */
+@media (max-width: 480px) {
+
+    
+    .header-container {
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    /*  hero title size */
+    .hero-content h1 {
+        display: none !important;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5rem;
+        color: #606C38;
+        margin-top: 6rem;
+    }
+    
+    .page-title-section {
+        padding: 2rem 1rem;
+    }
+    .page-title-section h1 {
+        font-size: 1.8rem;
+    }
+
+
+    /* Forces all action buttons to span the full width of the screen */
+    .btn-primary, 
+    .btn-secondary, 
+    .btn-submit, 
+    .quiz-btn, 
+    .btn-card {
+        width: 100%;
+        text-align: center;
+    }
+}

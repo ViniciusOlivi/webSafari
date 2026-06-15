@@ -39,7 +39,7 @@ router.get("/events", (req, res) => {
     params.push(category);
   }
 
-  sql += " ORDER BY date ASC";
+  sql += " ORDER BY event_date ASC";
 
   db.all(sql, params, (err, rows) => {
     if (err) {

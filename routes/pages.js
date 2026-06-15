@@ -94,5 +94,38 @@ router.get("/events/:id", (req, res) => {
   });
 });
 
+// Route habitats details
+router.get("/habitats/:id", (req, res) => {
+  const db = req.app.locals.db;
+  const habitatId = req.params.id;
+
+  db.get(
+    "SELECT * FROM habitats WHERE habitat_id = ?",
+    [habitatId],
+    (err, habitat) => {
+      if (err || !habitat) {
+        return res.status(404).send("Habitat not found");
+      }
+
+      db.all(
+        "SELECT * FROM experiences WHERE habitat_id = ?",
+        [habitatId],
+        (err, experiences) => {
+          if (err) {
+            return res.status(500).send("Database error");
+          }
+
+          // db
+          res.render("pages/habitat-detail", {
+            title: habitat.name,
+            habitat: habitat,
+            experiences: experiences,
+          });
+        },
+      );
+    },
+  );
+});
+
 // Export the router as default
 export default router;
